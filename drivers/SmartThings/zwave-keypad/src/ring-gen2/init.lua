@@ -9,7 +9,8 @@ local log = require "log"
 
 
 local ZWAVE_RING_GEN2_FINGERPRINTS = {
-  {mfr = 0x0346, prod = 0x0101, model = 0x0401}
+  {mfr = 0x0346, prod = 0x0101, model = 0x0301},
+  {mfr = 0x0346, prod = 0x0101, model = 0x0401},
 }
 
 local function can_handle(opts, driver, device, ...)
