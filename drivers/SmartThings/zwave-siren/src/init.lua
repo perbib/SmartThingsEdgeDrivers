@@ -74,7 +74,7 @@ end
 --- @param self st.zwave.Driver
 --- @param device st.zwave.Device
 local function added_handler(self, device)
-  cap_defaults.emit_default_events(device, self.supported_capabilities)
+  -- cap_defaults.emit_default_events(device, self.supported_capabilities)
 end
 
 --------------------------------------------------------------------------------------------
@@ -101,7 +101,8 @@ local driver_template = {
     require("aeon-siren"),
     require("yale-siren"),
     require("zipato-siren"),
-    require("utilitech-siren")
+    require("utilitech-siren"),
+    require("fortrezz")
   },
   lifecycle_handlers = {
     infoChanged = info_changed,
