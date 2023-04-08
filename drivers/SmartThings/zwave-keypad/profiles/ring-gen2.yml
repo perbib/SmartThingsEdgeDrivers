@@ -125,7 +125,7 @@ components:
 #    - name: VoiceAssistance
 preferences:
   - title: "PIN 1"
-    name: pin-1
+    name: pin
     description: "PIN for disarming and arming"
     required: true
     preferenceType: string
@@ -135,7 +135,7 @@ preferences:
       minLength: 0
       maxLength: 8
   - title: "PIN 2"
-    name: pin-2
+    name: pinAlt
     description: "Alternative PIN for disarming and arming"
     required: false
     preferenceType: string
@@ -294,15 +294,15 @@ preferences:
       default: 50
       minimum: 0
       maximum: 255
-  #- title: "Low battery threshold"
-   # name: lowBatteryTrshld
-   # description: "The percentage level at which the display would turn on the yellow battery indicator (whenever the display is on)"
-   # required: true
-   # preferenceType: integer
-   # definition:
-   #   default: 15 # another documentation says 30
-   #   minimum: 0
-   #   maximum: 100
+  - title: "Low battery threshold"
+    name: lowBatteryTrshld
+    description: "The percentage level at which the display would turn on the yellow battery indicator (whenever the display is on)"
+    required: true
+    preferenceType: integer
+    definition:
+      default: 15 # another documentation says 30
+      minimum: 0
+      maximum: 100
   - title: "Warn battery threshold"
     name: warnBatteryTrshld
     description: "The percentage level at which the display would turn on the red battery indicator (whenever the display is on)"
