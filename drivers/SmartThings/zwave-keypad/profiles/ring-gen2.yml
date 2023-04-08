@@ -124,10 +124,20 @@ components:
 #  categories:
 #    - name: VoiceAssistance
 preferences:
-  - title: "PIN"
-    name: pin
-    description: "PIN for disarming and arming home"
+  - title: "PIN 1"
+    name: pin-1
+    description: "PIN for disarming and arming"
     required: true
+    preferenceType: string
+    definition:
+      stringType: "password"
+      default: "0000"
+      minLength: 0
+      maxLength: 8
+  - title: "PIN 2"
+    name: pin-2
+    description: "PIN for disarming and arming"
+    required: false
     preferenceType: string
     definition:
       stringType: "password"
