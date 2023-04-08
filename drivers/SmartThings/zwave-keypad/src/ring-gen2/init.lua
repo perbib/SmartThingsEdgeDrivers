@@ -68,12 +68,10 @@ local function entry_control_notification_handler(self, device, cmd)
     return
   end
   local component = device.profile.components[componentName]
-  if event_type == EntryControl.event_type.DISARM_ALL or event_type == EntryControl.event_type.ARM_HOME then
-    local pin = device.preferences.pin
-    if event_data ~= pin then
-      incorrect_pin(device)
-      return
-    end
+  local pin = device.preferences.pin
+  if event_data ~= pin then
+    incorrect_pin(device)
+    return
   end
   device:emit_component_event(component, capabilities.button.button.pushed({state_change = true}))
 end
