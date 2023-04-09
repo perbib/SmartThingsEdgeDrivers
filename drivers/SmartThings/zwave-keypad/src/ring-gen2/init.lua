@@ -70,7 +70,7 @@ local function entry_control_notification_handler(self, device, cmd)
   local component = device.profile.components[componentName]
   local pin = device.preferences.pin
   local pinAlt = device.preferences.pinAlt
-  if event_data ~= pin or pinAlt then
+  if event_data ~= pin or event_data ~= pinAlt then
     incorrect_pin(device)
     return
   end
