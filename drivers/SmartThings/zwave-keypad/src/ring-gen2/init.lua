@@ -74,9 +74,8 @@ local function entry_control_notification_handler(self, device, cmd)
 
   if event_data == pin then
     return
-  else then
+  else
     incorrect_pin(device)
-    return
   end
   device:emit_component_event(component, capabilities.button.button.pushed({state_change = true}))
 end
