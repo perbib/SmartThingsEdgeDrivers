@@ -68,11 +68,14 @@ local function entry_control_notification_handler(self, device, cmd)
     return
   end
   local component = device.profile.components[componentName]
-  local pin = device.preferences.pin
-  local pinAlt = device.preferences.pinAlt
-  if event_data ~= pin or pinAlt then
+  pinCodes = { device.preferences.pin, device.preferences.pinAlt }
+  -- local pin = device.preferences.pin
+  -- local pinAlt = device.preferences.pinAlt
+  for _, code in ipairs(pinCodes) do
+    if event_data ~= code
     incorrect_pin(device)
     return
+  end
   device:emit_component_event(component, capabilities.button.button.pushed({state_change = true}))
 end
 
