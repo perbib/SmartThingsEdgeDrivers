@@ -74,10 +74,10 @@ local function entry_control_notification_handler(self, device, cmd)
   for _, code in ipairs(pinCodes) do
     if event_data == code
     break
-  else
-    incorrect_pin(device)
-    return
   end
+  incorrect_pin(device)
+return
+end
   device:emit_component_event(component, capabilities.button.button.pushed({state_change = true}))
 end
 
