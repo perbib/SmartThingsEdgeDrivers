@@ -137,7 +137,7 @@ preferences:
   - title: "PIN 2"
     name: pinAlt
     description: "Alternative PIN for disarming and arming"
-    required: false
+    required: true
     preferenceType: string
     definition:
       stringType: "password"
