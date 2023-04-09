@@ -72,7 +72,9 @@ local function entry_control_notification_handler(self, device, cmd)
   -- local pin = device.preferences.pin
   -- local pinAlt = device.preferences.pinAlt
   for _, code in ipairs(pinCodes) do
-    if event_data ~= code
+    if event_data == code
+    break
+  else
     incorrect_pin(device)
     return
   end
