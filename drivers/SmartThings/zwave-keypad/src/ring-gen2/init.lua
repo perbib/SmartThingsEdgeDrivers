@@ -173,7 +173,6 @@ local function device_added(self, device)
 
   device:emit_event(capabilities.powerSource.powerSource.unknown())
   device:emit_event(capabilities.securitySystem.securitySystemStatus.disarmed())
-  device:emit_event(capabilities.securitySystem.securitySystemStatus.armedStay())
   for componentName, _ in pairs(componentToAlarmData) do
     device:emit_component_event(device.profile.components[componentName], capabilities.alarm.alarm.off())
   end
